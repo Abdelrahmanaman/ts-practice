@@ -1,6 +1,19 @@
 "use strict";
-function fail(message) {
-    throw new Error(message);
+function getData(data) {
+    console.log(data.addNumber());
 }
-console.log(fail("Error ya"));
+getData({
+    id: 2,
+    username: "Abdelrahman",
+    country: "Oromiyya",
+    sayHello() {
+        return `Hello ${this.username}`;
+    },
+    sayWelcome() {
+        return `Welcome ${this.username}`;
+    },
+    addNumber(x, y) {
+        return 10 + 10;
+    },
+});
 //# sourceMappingURL=index.js.map
