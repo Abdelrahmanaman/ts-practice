@@ -84,14 +84,20 @@
 // const [id, title, published] =  articleLiST;
 // console.log(id, title, published);
 
-
 //* Void
 /*
   Function that will return nothing(void) with a value showing as undefined
   //! P.S undefined is not Void
 */
 
+// function logging(message: string): void {
+//   console.log(message);
+//   // return message //* => notice this void function doesn't have any return statement
+// }
+// console.log(logging("I am a message")); //returns the first console log within the function
+// //  and returns undefined to the calling code
 
+// // The example above  shows the use of a function returning void.
 
 //* Never
 /**
@@ -99,3 +105,10 @@
  * Doesn't have a normal completion
  * it throws an error or never finished running at all "infinite loop"
  */
+
+function fail(message: string) {
+  throw new Error(message);
+  // return message; // => this return is unreachable  because there is an error thrown beforehand in Never type
+}
+
+console.log(fail("Error ya"));
