@@ -314,3 +314,64 @@ TS does not perform any check to make sure type assertion is valid
 
 // let userOne =new User( 'John', 500);
 // console.log(userOne.sayMsg());
+
+
+//* Classes 
+/**
+ * Data access modifiers & parameters properties
+ * ---Public
+ * --------All members of a class in TS are public
+ * --------All Public members can be accessed from anywhere without any restrictions
+ *---Private
+ * -------Only accessible within the class itself
+ *  *---Protected
+ * -------Only accessible within the class itself same as private using deriving classes
+ * 
+ */
+
+
+//  class User{
+//   msg: () => string;
+//   constructor(private username: string,  protected salary: number){
+
+//     this.msg = function (){
+//       return  `Hello1 ${this.username}! Your salary is $${this.salary}.`;
+//     }
+//   }
+//   sayMsg(){
+//       return `Hello2 ${this.username}! Your salary is $${this.salary}.`;
+//   }
+// }
+
+// let userOne =new User( 'John', 500);
+// // console.log(userOne.username);
+// // console.log(userOne.salary);
+// console.log(userOne.msg());
+// console.log(userOne.sayMsg());
+
+//* Class get and set accessors
+
+ class User {
+   msg: () => string;
+   constructor(private _username: string, protected salary: number) {
+     this.msg = function () {
+       return `Hello1 ${this._username}! Your salary is $${this.salary}.`;
+     };
+   }
+   sayMsg() {
+     return `Hello2 ${this._username}! Your salary is $${this.salary}.`;
+   }
+   get username() :string {
+    return this._username;
+   }
+   set username(value:string) {
+     this._username = value;
+   }
+ }
+
+ let userOne = new User("John", 500);
+ console.log(userOne.username);
+ userOne.username= "Jane";
+ console.log(userOne.salary);
+ console.log(userOne.msg());
+ console.log(userOne.sayMsg());
