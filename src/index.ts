@@ -295,3 +295,22 @@ TS does not perform any check to make sure type assertion is valid
 
 
 //* Type annotations with CLASSES
+
+// class User{
+//   user:string;
+//   salary: number;
+//   msg: () => string;
+//   constructor(username: string, salary: number){
+//     this.user =  username;
+//     this.salary = salary;
+//     this.msg = function (){
+//       return  `Hello1 ${this.user}! Your salary is $${this.salary}.`;
+//     }
+//   }
+//   sayMsg(){
+//       return `Hello2 ${this.user}! Your salary is $${this.salary}.`;
+//   }
+// }
+
+// let userOne =new User( 'John', 500);
+// console.log(userOne.sayMsg());
