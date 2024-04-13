@@ -233,36 +233,38 @@ TS does not perform any check to make sure type assertion is valid
  *
  */
 
-interface User {
-  id?: number;
-  readonly username: string;
-  country: string;
-  sayHello(): string;
-  sayWelcome: () => string;
-  addNumber?(x: number, y: number): number;
-}
+// interface User {
+//   id?: number;
+//   readonly username: string;
+//   country: string;
+//   sayHello(): string;
+//   sayWelcome: () => string;
+//   addNumber(x: number, y: number): number;
+// }
 
-// let user: User = {
-//   id: 1,
+// // let user: User = {
+// //   id: 1,
+// //   username: "Abdelrahman",
+// //   country: "Oromia",
+// // };
+// // console.log(user);
+
+// function getData(data: User) {
+//   console.log(data.addNumber(2,3));
+// }
+
+// getData({
+//   id: 2,
 //   username: "Abdelrahman",
-//   country: "Oromia",
-// };
-// console.log(user);
+//   country: "Oromiyya",
+//   sayHello() {
+//     return `Hello ${this.username}`;
+//   },
+//   sayWelcome() {
+//     return `Welcome ${this.username}`;
+//   },  
+// addNumber(x: 10, y: 20) {
+//     return x + y ;
+// },});
 
-function getData(data: User) {
-  console.log(data.addNumber());
-}
 
-getData({
-  id: 2,
-  username: "Abdelrahman",
-  country: "Oromiyya",
-  sayHello() {
-    return `Hello ${this.username}`;
-  },
-  sayWelcome() {
-    return `Welcome ${this.username}`;
-  },
-addNumber(x: 10, y: 20) {
-    return 10 + 10 ;
-},});
