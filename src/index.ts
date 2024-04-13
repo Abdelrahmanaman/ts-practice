@@ -268,3 +268,30 @@ TS does not perform any check to make sure type assertion is valid
 // },});
 
 
+
+// //Home Page
+// interface Settings {
+//   readonly theme: boolean;
+//   font: string;
+// }
+
+// //Articles Page
+// interface Settings{
+//   sidebar: boolean; 
+// }
+
+// //Contact Page
+// interface Settings{
+//   external: boolean;  
+// }
+
+
+// let userSetting: Settings = {
+//   theme: true,
+//   font: "Open Sans",
+//   sidebar: true,
+//   external: true
+// }
+
+
+//* Type annotations with CLASSES
