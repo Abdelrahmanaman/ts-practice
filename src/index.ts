@@ -351,27 +351,53 @@ TS does not perform any check to make sure type assertion is valid
 
 //* Class get and set accessors
 
- class User {
-   msg: () => string;
-   constructor(private _username: string, protected salary: number) {
-     this.msg = function () {
-       return `Hello1 ${this._username}! Your salary is $${this.salary}.`;
-     };
-   }
-   sayMsg() {
-     return `Hello2 ${this._username}! Your salary is $${this.salary}.`;
-   }
-   get username() :string {
-    return this._username;
-   }
-   set username(value:string) {
-     this._username = value;
-   }
- }
+//  class User {
+//    msg: () => string;
+//    constructor(private _username: string, protected salary: number) {
+//      this.msg = function () {
+//        return `Hello1 ${this._username}! Your salary is $${this.salary}.`;
+//      };
+//    }
+//    sayMsg() {
+//      return `Hello2 ${this._username}! Your salary is $${this.salary}.`;
+//    }
+//    get username() :string {
+//     return this._username;
+//    }
+//    set username(value:string) {
+//      this._username = value;
+//    }
+//  }
 
- let userOne = new User("John", 500);
- console.log(userOne.username);
- userOne.username= "Jane";
- console.log(userOne.salary);
- console.log(userOne.msg());
- console.log(userOne.sayMsg());
+//  let userOne = new User("John", 500);
+//  console.log(userOne.username);
+//  userOne.username= "Jane";
+//  console.log(userOne.salary);
+//  console.log(userOne.msg());
+//  console.log(userOne.sayMsg());
+
+
+//* Class static Members
+/**
+ * Don't use "name, length, call"
+ */
+
+// class User{
+//    private static created: number = 0;
+//   static getCount() : void {
+//     console.log(`${this.created} users were created.`);
+//   }
+//   constructor(public username: string){
+//     User.created++;
+//   }
+// }
+
+// let userOne = new User("Abdelrahman")
+// let userTwo = new User("Muhammed")
+// let userThree = new User("AbuBakar");
+
+// // console.log(userOne);
+// // console.log(userTwo);
+// // console.log(userThree);
+// console.log(User.created);
+// User.getCount();
