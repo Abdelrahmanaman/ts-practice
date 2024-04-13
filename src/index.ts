@@ -262,12 +262,10 @@ TS does not perform any check to make sure type assertion is valid
 //   },
 //   sayWelcome() {
 //     return `Welcome ${this.username}`;
-//   },  
+//   },
 // addNumber(x: 10, y: 20) {
 //     return x + y ;
 // },});
-
-
 
 // //Home Page
 // interface Settings {
@@ -277,14 +275,13 @@ TS does not perform any check to make sure type assertion is valid
 
 // //Articles Page
 // interface Settings{
-//   sidebar: boolean; 
+//   sidebar: boolean;
 // }
 
 // //Contact Page
 // interface Settings{
-//   external: boolean;  
+//   external: boolean;
 // }
-
 
 // let userSetting: Settings = {
 //   theme: true,
@@ -292,7 +289,6 @@ TS does not perform any check to make sure type assertion is valid
 //   sidebar: true,
 //   external: true
 // }
-
 
 //* Type annotations with CLASSES
 
@@ -315,8 +311,7 @@ TS does not perform any check to make sure type assertion is valid
 // let userOne =new User( 'John', 500);
 // console.log(userOne.sayMsg());
 
-
-//* Classes 
+//* Classes
 /**
  * Data access modifiers & parameters properties
  * ---Public
@@ -326,9 +321,8 @@ TS does not perform any check to make sure type assertion is valid
  * -------Only accessible within the class itself
  *  *---Protected
  * -------Only accessible within the class itself same as private using deriving classes
- * 
+ *
  */
-
 
 //  class User{
 //   msg: () => string;
@@ -376,7 +370,6 @@ TS does not perform any check to make sure type assertion is valid
 //  console.log(userOne.msg());
 //  console.log(userOne.sayMsg());
 
-
 //* Class static Members
 /**
  * Don't use "name, length, call"
@@ -401,3 +394,56 @@ TS does not perform any check to make sure type assertion is valid
 // // console.log(userThree);
 // console.log(User.created);
 // User.getCount();
+
+//* Classes and inteface
+
+// interface Settings {
+//   theme: boolean;
+//   font?: string;
+//   save(): void;
+// }
+
+// class User implements Settings {
+//   constructor(public username: string, public theme: boolean, public font: string) {}
+//   save(): void {
+//     console.log("Saved");
+//   }
+// }
+
+// const  user1 = new User("Abdelrahman", true, "Open Sans");
+// console.log(user1);
+// user1.save();
+
+
+//* Classes  abstrack and members
+
+
+abstract class Food {
+  constructor(public title: string){}
+  abstract getCookingTime(): void 
+}
+
+class Pizza extends Food {
+  constructor(title: string, public price: number, public time: number){
+    super(title)
+  }
+  getCookingTime(): void {
+    console.log(`The cooking time for the ${this.title} Pizza is ${this.time} minutes, price $${this.price}`);
+  }
+
+}
+class Burger extends Food {
+  constructor(title: string, public price: number, public time: number) {
+    super(title);
+  }
+  getCookingTime(): void {
+    console.log(`The cooking time for the ${this.title}  burger is ${this.time} minutes, price $${this.price}`);
+  }
+}
+
+let pizzaOne = new Pizza("Mixed", 10,  25);
+console.log(pizzaOne)
+pizzaOne.getCookingTime();
+let burgerOne = new Pizza("Beef", 20, 10);
+console.log(burgerOne);
+burgerOne.getCookingTime();
